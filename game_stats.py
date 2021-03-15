@@ -6,8 +6,8 @@ class GameStats():
         self.a1_settings = a1_settings
         self.reset_stats()
 
-        # Start Alien Invasion by Punit-Choudhary Game in an active state.
-        self.game_active = True
+        # Start Alien Invasion by Punit-Choudhary Game in an inactive state.
+        self.game_active = False
 
     def reset_stats(self):
         '''Initialize statistics that can change during the game.'''
