@@ -63,12 +63,15 @@ def start_game(a1_settings, screen, stats, play_button, ship, aliens, bullets):
     ship.center_ship()
 
 
-def update_screen(a1_settings, screen, stats, ship, aliens, bullets, play_button):
+def update_screen(a1_settings, screen, stats, sb, ship, aliens, bullets, play_button):
     '''Update images on the screen and flip to the new screen.'''
     # Redraw the screen during each pass through the loop.
     screen.fill(a1_settings.bg_color)
     ship.blitme()
     aliens.draw(screen)
+
+    # Draw the score information.
+    sb.show_score()
 
     # Draw the play button if game is inactive.
     if not stats.game_active:
