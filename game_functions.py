@@ -44,20 +44,23 @@ def check_play_button(a1_settings, screen, stats, play_button, ship, aliens, bul
         start_game(a1_settings, screen, stats, play_button, ship, aliens, bullets)
 
 def start_game(a1_settings, screen, stats, play_button, ship, aliens, bullets):
-        # Hide the mouse cursor.
-        pygame.mouse.set_visible(False)
+    # Reset the game settings.
+    a1_settings.initialize_dynamic_settings()
 
-        # Reset the game statistics.
-        stats.reset_stats()
-        stats.game_active = True
+    # Hide the mouse cursor.
+    pygame.mouse.set_visible(False)
 
-        # Empty the list of aliens and bullets.
-        aliens.empty()
-        bullets.empty()
+    # Reset the game statistics.
+    stats.reset_stats()
+    stats.game_active = True
 
-        # Create a new fleet and center the ship.
-        create_fleet(a1_settings, screen, ship, aliens)
-        ship.center_ship()
+    # Empty the list of aliens and bullets.
+    aliens.empty()
+    bullets.empty()
+
+    # Create a new fleet and center the ship.
+    create_fleet(a1_settings, screen, ship, aliens)
+    ship.center_ship()
 
 
 def update_screen(a1_settings, screen, stats, ship, aliens, bullets, play_button):
