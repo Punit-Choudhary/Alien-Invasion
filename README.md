@@ -21,4 +21,4 @@ loses a ship. If the player loses three ships, the game ends.
 This was 1.0 version of Alien-Invasion<br/>
 Your suggestions, contribution will be heartly invited !
 
-Have fun playing this game and let me on instagram(@dad_of_evil)
+Have fun playing this game and let me on instagram([@dad_of_evil](https://www.instagram.com/dad_of_evil/))
