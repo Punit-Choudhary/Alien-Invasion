@@ -88,8 +88,10 @@ def update_screen(a1_settings, screen, stats, sb, ship, aliens, bullets, play_bu
 
 def fire_bullet(a1_settings, screen, ship, bullets):
     '''Fire a bullet if limit not reached yet.'''
+    bullet_sound = pygame.mixer.Sound("sounds/bullet_shoot.wav")
     # Create a new bullet and add it into the bullets group.
     if len(bullets) < a1_settings.bullets_allowed:
+        bullet_sound.play()
         new_bullet = Bullet(a1_settings, screen, ship)
         bullets.add(new_bullet)
 
@@ -114,11 +116,13 @@ def update_bullets(a1_settings, screen, stats, sb, ship, aliens, bullets):
 
 def check_bullet_alien_collisions(a1_settings, screen, stats, sb, ship, aliens, bullets):
     '''Respond to bullet-alien collisions.'''
+    bullet_hit = pygame.mixer.Sound("sounds/bullet_hit.wav")
     # Remove any bullets and aliens that have collided.
     collisions = pygame.sprite.groupcollide(bullets, aliens, True, True)
 
     if collisions:
         for aliens in collisions.values():
+            bullet_hit.play()
             stats.score += a1_settings.alien_points * len(aliens)
             sb.prep_score()
         check_high_score(stats, sb)
