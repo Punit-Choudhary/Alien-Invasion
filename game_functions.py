@@ -67,7 +67,10 @@ def start_game(a1_settings, screen, stats, sb, play_button, ship, aliens, bullet
     # Create a new fleet and center the ship.
     create_fleet(a1_settings, screen, ship, aliens)
     ship.center_ship()
-
+    
+    # Play bg music
+    bg_music = pygame.mixer.Sound("sounds/bg_music.wav")
+    bg_music.play()
 
 def update_screen(a1_settings, screen, stats, sb, ship, aliens, bullets, play_button):
     '''Update images on the screen and flip to the new screen.'''
