@@ -11,7 +11,7 @@ class Alien(Sprite):
         self.a1_settings = a1_settings
 
         # Load the alien image and set its rect attribute.
-        self.image = pygame.image.load('images/alien_red.png')
+        self.image = pygame.image.load('images/alien_green.png')
         self.rect = self.image.get_rect()
 
         # Start each new alien near the top of screen.
@@ -25,8 +25,15 @@ class Alien(Sprite):
         '''Draw the alien at its current location.'''
         self.screen.blit(self.image, self.rect)
     
-    def update(self):
+    def update(self, stats):
         '''Move the alien right or left.'''
+        if stats.level >= 15:
+            self.image = pygame.image.load('images/alien_red.png')
+        elif stats.level >= 7:
+            self.image = pygame.image.load('images/alien.png')
+        else:
+            self.image = pygame.image.load('images/alien_green.png')
+
         self.x += (self.a1_settings.alien_speed_factor * self.a1_settings.fleet_direction)
         self.rect.x = self.x
     

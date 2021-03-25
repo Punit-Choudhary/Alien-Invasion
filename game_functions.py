@@ -177,7 +177,7 @@ def update_aliens(a1_settings, screen, stats, sb, ship, aliens, bullets):
     '''Check if the fleet is at an edge,
        and then update the positions of all aliens in the fleet.'''
     check_fleet_edges(a1_settings, aliens)
-    aliens.update()
+    aliens.update(stats)
 
     # Look for alien-ship collisions.
     if pygame.sprite.spritecollideany(ship, aliens):
